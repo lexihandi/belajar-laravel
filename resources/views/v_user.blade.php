@@ -1,5 +1,5 @@
 @extends('layout.v_template')
-@section('title', 'Home')
+@section('title', 'User')
 @section('content')
-    <h1>home</h1>
+    <h1>user</h1>
 @endsection
