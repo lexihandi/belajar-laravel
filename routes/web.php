@@ -14,17 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('v_home');
+    return view('layout/v_template');
 });
 
 // Route::get('/siswa/{nama_siswa?}', function ($nama_siswa) {
 //     return view('v_siswa', ['nama_siswa' => $nama_siswa]);
 // });
-
-Route::get('/siswa', function () {
-    return view('v_siswa');
-});
-
-Route::get('/admin', function () {
-    return view('admin/v_index');
-});
