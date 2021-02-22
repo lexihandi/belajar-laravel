@@ -17,8 +17,12 @@ Route::get('/', function () {
     return view('v_home');
 });
 
-Route::get('/siswa/{nama_siswa?}', function ($nama_siswa) {
-    return view('v_siswa', ['nama_siswa' => $nama_siswa]);
+// Route::get('/siswa/{nama_siswa?}', function ($nama_siswa) {
+//     return view('v_siswa', ['nama_siswa' => $nama_siswa]);
+// });
+
+Route::get('/siswa', function () {
+    return view('v_siswa');
 });
 
 Route::get('/admin', function () {
