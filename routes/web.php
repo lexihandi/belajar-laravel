@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GuruController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,22 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('v_home');
-});
-
-Route::get('/guru', function () {
-    return view('v_guru');
-});
-
-Route::get('/siswa', function () {
-    return view('v_siswa');
-});
-
-Route::get('/user', function () {
-    return view('v_user');
-});
-
-// Route::get('/siswa/{nama_siswa?}', function ($nama_siswa) {
-//     return view('v_siswa', ['nama_siswa' => $nama_siswa]);
-// });
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/guru', [GuruController::class, 'index']);
+Route::get('/siswa', [SiswaController::class, 'index']);
+Route::get('/user', [UserController::class, 'index']);

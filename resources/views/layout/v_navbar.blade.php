@@ -2,25 +2,25 @@
     <!-- Add icons to the links using the .nav-icon class
 with font-awesome or any other icon font library -->
     <li class="nav-item">
-        <a href="/" class="nav-link">
+        <a href="/" class="{{ request()->is('/') ? 'nav-link active' : 'nav-link' }}">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p class="text">Dashboard</p>
         </a>
     </li>
     <li class="nav-item">
-        <a href="/siswa" class="nav-link">
+        <a href="/siswa" class="{{ request()->is('siswa') ? 'nav-link active' : 'nav-link' }}">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p class="text">Siswa</p>
         </a>
     </li>
     <li class="nav-item">
-        <a href="/guru" class="nav-link">
+        <a href="/guru" class="{{ request()->is('guru') ? 'nav-link active' : 'nav-link' }}">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p class="text">Guru</p>
         </a>
     </li>
     <li class="nav-item">
-        <a href="/user" class="nav-link">
+        <a href="/user" class="{{ request()->is('user') ? 'nav-link active' : 'nav-link' }}">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p class="text">User</p>
         </a>
