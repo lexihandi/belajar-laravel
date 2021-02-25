@@ -30,4 +30,31 @@ class GuruController extends Controller
         ];
         return view('v_detailguru', $data);
     }
+
+    public function add()
+    {
+        return view('v_addguru');
+    }
+
+    public function insert()
+    {
+        Request()->validate(
+            [
+                'nip' => 'required|unique:tbl_guru,nip|min:4|max:5',
+                'nama_guru' => 'required',
+                'mapel' => 'required',
+                'foto_guru' => 'required|mimes:png,jpg,jpeg|max:1024',
+            ],
+            [
+                'nip.required' => 'Nomor nip wajib diisi',
+                'nip.unique' => 'Nomor ini sudah ada (duplikat)',
+                'nip.min' => 'Nomor nip minimal 4 angka', 'nip.max' => 'Nomor nip maksimal 5 angka',
+                'nama_guru.required' => 'Nama guru wajib diisi',
+                'mapel.required' => 'Mapel wajib diisi',
+                'foto_guru.required' => 'Foto wajib diupload',
+                'foto_guru.mimes' => 'Format tidak didukung, hanya mendukung format PNG, JPG, JPEG',
+                'foto_guru.max' => 'Ukuran foto melebihi 1024mb'
+            ],
+        );
+    }
 }

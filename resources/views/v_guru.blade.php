@@ -3,6 +3,7 @@
 @section('content')
     <table class="table table-bordered">
         <thead>
+            <tr><a href="/guru/add" class="btn btn-primary btn-md mb-4">Tambah</a></tr>
             <tr>
                 <th>No</th>
                 <th>NIP</th>
