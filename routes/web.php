@@ -19,5 +19,6 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/guru', [GuruController::class, 'index']);
+Route::get('/guru/detail/{id_guru}', [GuruController::class, 'detail']);
 Route::get('/siswa', [SiswaController::class, 'index']);
 Route::get('/user', [UserController::class, 'index']);
