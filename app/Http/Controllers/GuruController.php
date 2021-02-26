@@ -131,4 +131,15 @@ class GuruController extends Controller
 
         return redirect()->route('guru')->with('pesan', 'Data berhasil diupdate');
     }
+
+    public function delete($id_guru)
+    {
+        $guru = $this->GuruModel->detail($id_guru);
+        if ($guru->foto_guru <> "") {
+            unlink(public_path('img') . '/' . $guru->foto_guru);
+        }
+
+        $this->GuruModel->deleteData($id_guru);
+        return redirect()->route('guru')->with('pesan', 'Data berhasil dihapus');
+    }
 }
