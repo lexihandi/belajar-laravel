@@ -39,7 +39,7 @@
 
                     <div class="form-group">
                         <label>Foto Guru</label>
-                        <input type="file" name="foto_guru" class="form-control" value="{{ old('foto_guru') }}">
+                        <input type="file" name="foto_guru" class="form-control">
                         <div class="text-danger">
                             @error('foto_guru')
                                 {{ $message }}

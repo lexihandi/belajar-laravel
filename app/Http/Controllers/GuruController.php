@@ -56,5 +56,20 @@ class GuruController extends Controller
                 'foto_guru.max' => 'Ukuran foto melebihi 1024mb'
             ],
         );
+
+        $file = Request()->foto_guru;
+        $fileName = Request()->nip . '.' . $file->extension();
+        $file->move(public_path('img'), $fileName);
+
+        $data =
+            [
+                'nip' => Request()->nip,
+                'nama_guru' => Request()->nama_guru,
+                'mapel' => Request()->mapel,
+                'foto_guru' => $fileName,
+            ];
+
+        $this->GuruModel->addData($data);
+        return redirect()->route('guru')->with('pesan', 'Data berhasil disimpan');
     }
 }
